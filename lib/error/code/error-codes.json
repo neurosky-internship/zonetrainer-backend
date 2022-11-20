@@ -1,0 +1,10 @@
+{
+  "1000": {"status": 100, "message": "Continue"},
+  "2000": {"status": 200, "message": "OK"},
+  "3000": {"status": 300, "message": "Multiple Choice"},
+  "4000": {"status": 400, "message": "Bad Request"},
+  "4001": {"status": 433, "message": "장시간 사용이 없어 자동으로 로그아웃 되었습니다."},
+  "4002": {"status": 434, "message": "인증 메일을 다시 발급해주세요."},
+  "4003": {"status": 435, "message": "다시 로그인 해주세요."},
+  "5000": {"status": 500, "message": "Internal Server Error"}
+}

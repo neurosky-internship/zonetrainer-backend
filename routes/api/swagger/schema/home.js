@@ -178,5 +178,15 @@ module.exports = {
           ]
       },
     }
+  },
+  RecentResponse: {
+    type: 'array',
+    example:
+      [
+        "bad",
+        "bad",
+        "10/22 at 20:30",
+        "2022-11-22T11:30:26.867Z"
+      ]
   }
 }

@@ -9,7 +9,7 @@ exports.makeAvgMinMaxData = async  (beforeMetaData) => {
     let beforeMeditation = [];
     if(beforeMetaData !== 'undefined'){
       beforeAttention = (beforeMetaData).map(md => md.attention).sort() || [];
-      beforeMeditation = (beforeMetaData).map(md => md.attention).sort() || [];
+      beforeMeditation = (beforeMetaData).map(md => md.meditation).sort() || [];
     }
     const attentionLength = beforeAttention.length;
     const meditationLength = beforeMeditation.length;

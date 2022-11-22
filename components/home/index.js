@@ -37,7 +37,7 @@ router.post('/', controller.addData);
  * @swagger
  * /home/recentData/:userId:
  *   get:
- *     description: 최근 데이터 불러오기
+ *     description: 최근 데이터 불러오기 [attention, meditation, 가공한 시간, 가공하지 않은 시간]
  *     tags: [home]
  *     produces:
  *       - application/json
@@ -47,7 +47,7 @@ router.post('/', controller.addData);
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/'
+ *               $ref: '#/components/schemas/RecentResponse'
  */
 router.get('/recentData/:userId', controller.getRecentData);
 

@@ -21,12 +21,12 @@ class homeService {
   }
 
   async getRecentData(userId){
-    const {recentData, updatedAt} = await usersModel.findOne({userId},{_id:0,recentData:1,updatedAt:1});
-    if(!recentData){
+    const isExist = await usersModel.findOne({userId},{_id:0,recentData:1,updatedAt:1});
+    if(!isExist){
       return;
     }
-    let attention = parseInt(recentData[0]) || -1;
-    let meditation = parseInt(recentData[1]) || -1;
+    let attention = parseInt(isExist.recentData[0]) || -1;
+    let meditation = parseInt(isExist.recentData[1]) || -1;
     switch (true){
       case (attention < 30):
         attention = "bad";
@@ -56,11 +56,9 @@ class homeService {
         break;
     }
     // 11/10 at 11:06 pm
-    if(!updatedAt){
-      return
-    }
+    const updatedAt = isExist.updatedAt;
     let date = updatedAt.getMonth() + '/' + updatedAt.getDate() + ' at ' + updatedAt.getHours() + ':' + updatedAt.getMinutes();
-    return [attention,meditation,date];
+    return [attention,meditation,date,updatedAt];
   }
 
   async getGraphData(userId){
@@ -105,7 +103,8 @@ class homeService {
     const meditationLength = meditation.length;
     const avgData = Array.isArray(meditation) ? (meditation.reduce((a, c) => parseInt(a) + parseInt(c), 0)/attentionLength).toString(): 0;
     const avgData2 = Array.isArray(meditation) ? (meditation.reduce((a, c) => parseInt(a) + parseInt(c), 0)/meditationLength).toString() : 0;
-    return await users.update({userId},{recentData : [avgData,avgData2], updatedAt : new Date()});
+    await users.update({userId},{recentData : [avgData,avgData2], updatedAt : new Date()});
+    return {userid : userId, recentData: [avgData,avgData2]}
   }
 
   async addAvgMinMaxData(info) {

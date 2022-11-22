@@ -67,7 +67,7 @@ exports.addData = async (req, res, next) => {
     const recentDataResult = await homeService.updateRecentData(metaData, userId);
     const twoDataResult =  await this.addAvgMinMaxData(userId);
 
-    res.json({metaDataResult, recentDataResult, twoDataResult });
+    res.json({metaDataResult, recentDataResult, twoDataResult});
   }
   catch (err) {
     next(err);
@@ -79,7 +79,7 @@ exports.getRecentData = async (req, res, next) => {
     const userId = req.params.userId;
     const result = await homeService.getRecentData(userId);
     if(!result){
-      res.json("최근 데이터가 없습니다.")
+      res.json('최근 데이터가 없습니다.')
     }
     else{
       res.json(result);

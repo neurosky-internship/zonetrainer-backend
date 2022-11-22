@@ -58,7 +58,7 @@ class homeService {
     // 11/10 at 11:06 pm
     const updatedAt = isExist.updatedAt;
     let date = updatedAt.getMonth() + '/' + updatedAt.getDate() + ' at ' + updatedAt.getHours() + ':' + updatedAt.getMinutes();
-    return [attention,meditation,date,updatedAt];
+    return {attention,meditation,date,updatedAt};
   }
 
   async getGraphData(userId){

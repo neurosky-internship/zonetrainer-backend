@@ -10,5 +10,6 @@ if(!config.isProduction) {
 }
 
 app.use('/auth', require('../../components/auth'));
+app.use('/home', require('../../components/home'));
 
 module.exports = app;

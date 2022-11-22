@@ -33,4 +33,40 @@ const controller = require('./controller');
  */
 router.post('/', controller.addData);
 
+/**
+ * @swagger
+ * /home/recentData/:userId:
+ *   get:
+ *     description: 최근 데이터 불러오기
+ *     tags: [home]
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: success
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/'
+ */
+router.get('/recentData/:userId', controller.getRecentData);
+
+/**
+ * @swagger
+ * /home/graphData/:userId:
+ *   get:
+ *     description: attention, meditation 데이터 불러오기
+ *     tags: [home]
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: success
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/GraphResponse'
+ */
+router.get('/graphData/:userId', controller.getGraphData);
+
 module.exports = router;

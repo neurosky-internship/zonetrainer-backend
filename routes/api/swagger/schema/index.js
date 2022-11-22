@@ -2,6 +2,7 @@
 
 const schemas = {};
 Object.assign(schemas, require('./auth'));
+Object.assign(schemas, require('./home'));
 
 module.exports = {
   components: {

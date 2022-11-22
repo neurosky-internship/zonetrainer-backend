@@ -14,11 +14,11 @@ exports.makeAvgMinMaxData = async  (beforeMetaData) => {
     const attentionLength = beforeAttention.length;
     const meditationLength = beforeMeditation.length;
 
-    const avgData = Array.isArray(beforeAttention) ? (beforeAttention.reduce((a, c) => parseInt(a) + parseInt(c), 0)/attentionLength).toString(): 0;
+    const avgData = Array.isArray(beforeAttention) ? (beforeAttention.reduce((a, c) => parseInt(a) + parseInt(c), 0)/attentionLength): 0;
     let minData = Array.isArray(beforeAttention) ? beforeAttention[0] : 0;
     let maxData = Array.isArray(beforeAttention) ? beforeAttention[attentionLength-1] : 0;
 
-    const avgData2 = Array.isArray(beforeMeditation) ? (beforeMeditation.reduce((a, c) => parseInt(a) + parseInt(c), 0)/meditationLength).toString() : 0;
+    const avgData2 = Array.isArray(beforeMeditation) ? (beforeMeditation.reduce((a, c) => parseInt(a) + parseInt(c), 0)/meditationLength) : 0;
     let minData2 = Array.isArray(beforeMeditation) ? beforeMeditation[0] : 0;
     let maxData2 = Array.isArray(beforeMeditation) ? beforeMeditation[meditationLength-1] : 0;
 

@@ -75,5 +75,108 @@ module.exports = {
           ]
       },
     }
+  },
+  GraphResponse: {
+    type: 'object',
+    properties: {
+      attentionData: {
+        type: 'object',
+        description: 'attention 데이터 7일치 (마지막 날이 오늘)',
+        example:
+          [
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-15T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-16T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-17T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-18T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-19T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-20T15:00:00.000Z"
+            },
+            {
+              "date": "2022-11-21T15:00:00.000Z",
+              "avgData": "20",
+              "minData": "10",
+              "maxData": "30"
+            }
+          ]
+      },
+      meditationData: {
+        type: 'object',
+        description: 'meditation 데이터 7일치 (마지막 날이 오늘)',
+        example:
+          [
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-15T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-16T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-17T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-18T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-19T15:00:00.000Z"
+            },
+            {
+              "avgData": 0,
+              "minData": 0,
+              "maxData": 0,
+              "date": "2022-11-20T15:00:00.000Z"
+            },
+            {
+              "date": "2022-11-21T15:00:00.000Z",
+              "avgData": "20",
+              "minData": "10",
+              "maxData": "30"
+            }
+          ]
+      },
+    }
   }
 }

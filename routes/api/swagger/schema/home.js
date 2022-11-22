@@ -38,16 +38,16 @@ module.exports = {
           [
           {
             "_id": "637c6fa546887286939ba6ad",
-            "attention": "10",
-            "meditation": "10",
+            "attention": 10,
+            "meditation": 10,
             "userId": "12",
             "date": "2022-11-22T06:43:49.428Z",
             "createdAt": "2022-11-22T06:43:49.428Z"
           },
           {
             "_id": "637c6fa546887286939ba6ae",
-            "attention": "20",
-            "meditation": "20",
+            "attention": 20,
+            "meditation": 20,
             "userId": "12",
             "date": "2022-11-22T06:43:49.428Z",
             "createdAt": "2022-11-22T06:43:49.428Z"
@@ -61,16 +61,16 @@ module.exports = {
             {
               "userId": "12",
               "date": "2022-11-21T15:00:00.000Z",
-              "avgData": "20",
-              "minData": "10",
-              "maxData": "30"
+              "avgData": 20,
+              "minData": 10,
+              "maxData": 30
             },
             {
               "userId": "12",
               "date": "2022-11-21T15:00:00.000Z",
-              "avgData": "20",
-              "minData": "10",
-              "maxData": "30"
+              "avgData": 20,
+              "minData": 10,
+              "maxData": 30
             }
           ]
       },
@@ -122,9 +122,9 @@ module.exports = {
             },
             {
               "date": "2022-11-21T15:00:00.000Z",
-              "avgData": "20",
-              "minData": "10",
-              "maxData": "30"
+              "avgData": 20,
+              "minData": 10,
+              "maxData": 30
             }
           ]
       },
@@ -171,22 +171,22 @@ module.exports = {
             },
             {
               "date": "2022-11-21T15:00:00.000Z",
-              "avgData": "20",
-              "minData": "10",
-              "maxData": "30"
+              "avgData": 20,
+              "minData": 10,
+              "maxData": 30
             }
           ]
       },
     }
   },
   RecentResponse: {
-    type: 'array',
+    type: 'object',
     example:
-      [
-        "bad",
-        "bad",
-        "10/22 at 20:30",
-        "2022-11-22T11:30:26.867Z"
-      ]
+      {
+        "attention": "bad",
+        "meditation": "bad",
+        "date": "10/22 at 22:19",
+        "updatedAt": "2022-11-22T13:19:19.193Z"
+      }
   }
 }

@@ -97,14 +97,19 @@ class homeService {
     let meditation = [];
     if(metaData !== 'undefined'){
       attention = (metaData).map(md => md.attention).sort() || [];
-      meditation = (metaData).map(md => md.attention).sort() || [];
+      meditation = (metaData).map(md => md.meditation).sort() || [];
     }
     const attentionLength = attention.length;
     const meditationLength = meditation.length;
-    const avgData = Array.isArray(meditation) ? (meditation.reduce((a, c) => parseInt(a) + parseInt(c), 0)/attentionLength).toString(): 0;
+    const avgData = Array.isArray(attention) ? (attention.reduce((a, c) => parseInt(a) + parseInt(c), 0)/attentionLength).toString(): 0;
     const avgData2 = Array.isArray(meditation) ? (meditation.reduce((a, c) => parseInt(a) + parseInt(c), 0)/meditationLength).toString() : 0;
-    await users.update({userId},{recentData : [avgData,avgData2], updatedAt : new Date()});
-    return {userid : userId, recentData: [avgData,avgData2]}
+
+    const isExist  = await usersModel.findOne({userId});
+    if(isExist)
+      await users.update({userId},{recentData : [avgData,avgData2], updatedAt : new Date()});
+    else
+      await users.create({userId : userId, recentData : [avgData,avgData2], updatedAt : new Date()});
+    return {userId : userId, recentData: [avgData,avgData2]}
   }
 
   async addAvgMinMaxData(info) {

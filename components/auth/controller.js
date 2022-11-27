@@ -7,26 +7,13 @@ const client = new OAuth2Client(clientId);
 
 exports.authGoogle = async (req, res, next) => {
   try {
-    const token = req.body.token;
-    const ticket = await client.verifyIdToken({
-      idToken: token,
-      audience: clientId
-    });
-    const payload = ticket.getPayload();
-    const userId = payload['sub'];
-
+    const userId = req.body.userId;
     const isExist = await authService.findUserId(userId);
-
     if(isExist){
-      res.json(isExist);
+      res.json({message : "이미 존재하는 Id입니다."});
     }
     else{
-      const newUserDoc = {
-        userId,
-        email: payload.email,
-        name: payload.name
-      }
-      const result = await authService.addUser(newUserDoc);
+      const result = await authService.addUser({userId});
       res.json(result);
     }
   }

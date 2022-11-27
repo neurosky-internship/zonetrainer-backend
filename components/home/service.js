@@ -13,7 +13,7 @@ class homeService {
   }
 
   async isExistData(today, tomorrow){
-    return await metaDatas.find({date : {$lte : tomorrow, $gte : today}},{_id:0,attention:1,meditation:1});
+    return await metaDatas.find({timestamp : {$lte : tomorrow, $gte : today}},{_id:0,attention:1,meditation:1});
   }
 
   async isExistAvgMinMaxData(today, tomorrow){

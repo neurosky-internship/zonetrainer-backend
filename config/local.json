@@ -1,0 +1,21 @@
+{
+  "env": "local",
+  "isLocal": true,
+  "server": {
+    "baseUrl": "http://localhost",
+    "port": 3000
+  },
+  "db": {
+    "name": "Cluster0",
+    "primaryUri": "mongodb+srv://bohyeon:shinee1209!@cluster0.vje1uap.mongodb.net/?retryWrites=true&w=majority",
+    "secondaryUri": "mongodb+srv://bohyeon:shinee1209!@cluster0.vje1uap.mongodb.net/?retryWrites=true&w=majority"
+  },
+  "googleCredentials": {
+    "client_id":"756062553216-0aql9gicijkpnd4e5rc97s8t26esvaoe.apps.googleusercontent.com",
+    "project_id":"disco-portal-369206","auth_uri":"https://accounts.google.com/o/oauth2/auth",
+    "token_uri":"https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret":"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",
+    "redirect_uris":["http://localhost:3000/auth/google/callback"]
+}
+}

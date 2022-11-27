@@ -59,12 +59,17 @@ exports.addAvgMinMaxData = async (userId) => {
 
 exports.addData = async (req, res, next) => {
   try {
-    const metaData = req.body.data;
+    const attentionData = req.body.attentionData;
+    const meditationData = req.body.meditationData;
+
     const userId = req.body.userId;
 
-    metaData.forEach(md => {md.userId = userId;})
-    const metaDataResult = await homeService.addMetaData(metaData);
-    const recentDataResult = await homeService.updateRecentData(metaData, userId);
+    attentionData.forEach(md => {md.userId = userId;})
+    for(let i = 0; i<attentionData.length; i++){
+      attentionData[i].meditation = meditationData[i].meditation || 0;
+    }
+    const metaDataResult = await homeService.addMetaData(attentionData);
+    const recentDataResult = await homeService.updateRecentData(attentionData, userId);
     const twoDataResult =  await this.addAvgMinMaxData(userId);
 
     res.json({metaDataResult, recentDataResult, twoDataResult});

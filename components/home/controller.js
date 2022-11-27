@@ -79,7 +79,7 @@ exports.getRecentData = async (req, res, next) => {
     const userId = req.params.userId;
     const result = await homeService.getRecentData(userId);
     if(!result){
-      res.json('최근 데이터가 없습니다.')
+      res.json({attention : -1,meditation: -1})
     }
     else{
       res.json(result);

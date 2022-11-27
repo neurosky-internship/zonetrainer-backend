@@ -27,37 +27,37 @@ class homeService {
     }
     let attention = parseInt(isExist.recentData[0]) || -1;
     let meditation = parseInt(isExist.recentData[1]) || -1;
-    switch (true){
-      case (attention < 30):
-        attention = "bad";
-        break;
-      case (attention < 60):
-        attention = "good";
-        break;
-      case (attention < 100):
-        attention = "perfect";
-        break;
-      default:
-        attention = "no data";
-        break;
-    }
-    switch (true){
-      case (0 < meditation < 30):
-        meditation = "bad";
-        break;
-      case (meditation < 60):
-        meditation = "good";
-        break;
-      case (meditation < 100):
-        meditation = "perfect";
-        break;
-      default:
-        meditation = "no data";
-        break;
-    }
+    // switch (true){
+    //   case (attention < 30):
+    //     attention = "bad";
+    //     break;
+    //   case (attention < 60):
+    //     attention = "good";
+    //     break;
+    //   case (attention < 100):
+    //     attention = "perfect";
+    //     break;
+    //   default:
+    //     attention = "no data";
+    //     break;
+    // }
+    // switch (true){
+    //   case (0 < meditation < 30):
+    //     meditation = "bad";
+    //     break;
+    //   case (meditation < 60):
+    //     meditation = "good";
+    //     break;
+    //   case (meditation < 100):
+    //     meditation = "perfect";
+    //     break;
+    //   default:
+    //     meditation = "no data";
+    //     break;
+    // }
     // 11/10 at 11:06 pm
-    const updatedAt = isExist.updatedAt;
-    let date = updatedAt.getMonth() + '/' + updatedAt.getDate() + ' at ' + updatedAt.getHours() + ':' + updatedAt.getMinutes();
+    const updatedAt = isExist.updatedAt || -1;
+    let date = updatedAt.getMonth() + '/' + updatedAt.getDate() + ' at ' + updatedAt.getHours() + ':' + updatedAt.getMinutes() || -1;
     return {attention,meditation,date,updatedAt};
   }
 

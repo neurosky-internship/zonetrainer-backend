@@ -7,26 +7,29 @@ module.exports = {
         description: '유저 아이디',
         example: '123ABC'
       },
-      data: {
+      attentionData: {
         type: 'object',
         description: '측정 데이터',
-        example:[{
-                    "timestamp" : "2000-10-00T10:00:00",
-                    "attention" : 10,
-                    "meditation" : 10
-                  },
-                  {
-                    "timestamp" : "2000-10-00T10:00:01",
-                    "attention" : 20,
-                    "meditation" : 20
-                  },
-                  {
-                    "timestamp" : "2000-10-00T10:00:02",
-                    "attention" : 30,
-                    "meditation" : 30
-                  }],
+        example: [
+                    {
+                      "timestamp" : "2022-11-27T09:31:41.223",
+                      "attention" : 10
+                    }
+
+                  ]},
+      meditationData: {
+        type: 'object',
+        description: '측정 데이터',
+        example: [
+          {
+            "timestamp" : "2022-11-27T09:31:41.223",
+            "meditation" : 50
+          }
+        ]
       },
-    }
+    },
+
+
   },
   HomeResponse: {
     type: 'object',
